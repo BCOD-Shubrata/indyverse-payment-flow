@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Document</title>
+    <style>
+        * {
+            font-family: sans-serif;
+            margin: 0;
+            border-radius: 0;
+            text-transform: uppercase;
+        }
+
+        html {
+            font-size: 80%;
+        }
+
+        .form-control,
+        .card,
+        .btn {
+            border-radius: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid mt-2">
+        <div class="row">
+            <div class="col-12 col-md-3">
+                <p class="fw-bold">Algorithm </p>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="caseOne">
+                            <div class="mb-3">
+                                <label class="form-label">Product Price</label>
+                                <input type="number" class="form-control" id="caseOneProduct">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Gst</label>
+                                <input type="number" class="form-control" id="caseOneGst" value="12" readonly>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Net Price</label>
+                                <input type="number" class="form-control" id="caseOneNetPrice" readonly>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Gst Value</label>
+                                <input type="number" class="form-control" id="caseOneGstVal" readonly>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Commission</label>
+                                <input type="number" class="form-control" id="caseOneCommission" readonly>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Net price of the designer</label>
+                                <input type="number" class="form-control" id="caseOneDesignerVal" readonly>
+                            </div>
+                            <!-- <button type="submit" class="btn btn-primary w-100" onclick="CaseOneFun()">Submit</button> -->
+                        </div>
+                        <div class="result mt-1">
+                            <div class=" fw-bold text-center mt-2" id="totalValCaseOne"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-3">
+                <p class="fw-bold">From Customer Point of View</p>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="caseOne">
+                            <div class="mb-3">
+                                <label class="form-label">Price of the Priduct</label>
+                                <input type="number" class="form-control" id="caseOneCusromerProductPrice" readonly>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Tax</label>
+                                <input type="number" class="form-control" id="caseOneCusromerTaxPrice" readonly>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-3">
+                <p class="fw-bold">Amount to be billed by Indyverse to Designer</p>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="caseOne">
+                            <div class="mb-3">
+                                <label class="form-label">Commission Bill</label>
+                                <input type="number" class="form-control" id="caseOneItdBill" readonly>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">GST on above</label>
+                                <input type="number" class="form-control" id="caseOneItdGstVal" readonly>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Total Amount to be Billed </label>
+                                <input type="number" class="form-control" id="caseOneItdTotalVal" readonly>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-3">
+                <p class="fw-bold">Amount to be Paid to Designer</p>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="caseOne">
+                            <div class="mb-3">
+                                <label class="form-label">Less : Amt Billed to Designer</label>
+                                <input type="number" class="form-control" id="caseOneCustDes" readonly>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Less: TCS @1% GST on gross</label>
+                                <input type="number" class="form-control" id="caseOneCustGstGross" readonly>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Less : Amt Billed to Designer</label>
+                                <input type="number" class="form-control" id="caseOneCustDesTDS" readonly>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Net to be paid</label>
+                                <input type="number" class="form-control" id="caseOneNetPaid" readonly>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-2">
+            <div class="py-2 fw-bold text-center">Cross Checking III from different method</div>
+            <div class="col-12 col-md-3">
+                <p class="fw-bold">From Customer Point of View</p>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="caseOne">
+                            <div class="mb-3">
+                                <label class="form-label">Price of the Priduct</label>
+                                <input type="number" class="form-control" id="newMethodProductPrice" readonly>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Add: GST on the same </label>
+                                <input type="number" class="form-control" id="newMethodGstPrice" readonly>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Total Value Desinger</label>
+                                <input type="number" class="form-control" id="newMethodDesingerVal" readonly>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Less: Taxes Deducted by us in form of TDS & TCS</label>
+                                <input type="number" class="form-control" id="newMethodTds" readonly>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Less: Diffrential Input GST deducted on Commission</label>
+                                <input type="number" class="form-control" id="newMethodGstComission" readonly>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Net Value to Designer</label>
+                                <input type="number" class="form-control" id="newMethodNetDesingerVal" readonly>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            // case one 
+            var caseOneProduct = document.getElementById('caseOneProduct');
+            var caseOneGst = document.getElementById('caseOneGst');
+            var totalValCaseOne = document.getElementById('totalValCaseOne');
+            var caseOneGstVal = document.getElementById('caseOneGstVal');
+            var caseOneNetPrice = document.getElementById('caseOneNetPrice');
+            var caseOneCommission = document.getElementById('caseOneCommission');
+            var caseOneDesignerVal = document.getElementById('caseOneDesignerVal');
+            var caseOneCusromerProductPrice = document.getElementById('caseOneCusromerProductPrice');
+            var caseOneCusromerTaxPrice = document.getElementById('caseOneCusromerTaxPrice');
+            var caseOneItdBill = document.getElementById('caseOneItdBill');
+            var caseOneItdGstVal = document.getElementById('caseOneItdGstVal');
+            var caseOneItdTotalVal = document.getElementById('caseOneItdTotalVal');
+            var caseOneCustDes = document.getElementById('caseOneCustDes');
+            var caseOneCustGstGross = document.getElementById('caseOneCustGstGross');
+            var caseOneCustDesTDS = document.getElementById('caseOneCustDesTDS');
+            var caseOneNetPaid = document.getElementById('caseOneNetPaid');
+
+            // different method
+
+            var newMethodProductPrice = document.getElementById('newMethodProductPrice');
+            var newMethodGstPrice = document.getElementById('newMethodGstPrice');
+            var newMethodDesingerVal = document.getElementById('newMethodDesingerVal');
+            var newMethodTds = document.getElementById('newMethodTds');
+            var newMethodGstComission = document.getElementById('newMethodGstComission');
+            var newMethodNetDesingerVal = document.getElementById('newMethodNetDesingerVal');
+
+            // function called
+            caseOneProduct.addEventListener('keyup', CaseOneFun);
+
+            function CaseOneFun() {
+                var productPrice = parseInt(caseOneProduct.value);
+                var gstPrice = parseInt(caseOneGst.value) / 100;
+                var CommissionVal = 30 / 100;
+                var shippingCharges = 0;
+                var gstValue = productPrice / (1 + gstPrice) * gstPrice;
+                var netPrice = gstValue - productPrice;
+                var commissionPrice = netPrice / (1 + CommissionVal) * CommissionVal;
+                var designerPrice = netPrice - commissionPrice;
+                var itdGstValue = (commissionPrice + shippingCharges) * 18 / 100;
+                var tcsValue = (netPrice + shippingCharges) * 1 / 100;
+                var tdsValue = (netPrice + shippingCharges) * 1 / 100;
+                postSumToPage(productPrice, gstPrice, shippingCharges, gstValue, netPrice, commissionPrice, designerPrice, itdGstValue, tcsValue, tdsValue)
+            }
+            function postSumToPage(productPrice, gstPrice, shippingCharges, gstValue, netPrice, commissionPrice, designerPrice, itdGstValue, tcsValue, tdsValue) {
+                caseOneGstVal.value = gstValue.toFixed(2);
+                caseOneNetPrice.value = Math.abs(netPrice.toFixed(2));
+                caseOneCommission.value = Math.abs(commissionPrice.toFixed(2));
+                caseOneDesignerVal.value = Math.abs(designerPrice.toFixed(2));
+                caseOneCusromerProductPrice.value = caseOneNetPrice.value;
+                caseOneCusromerTaxPrice.value = caseOneGstVal.value;
+                caseOneItdBill.value = caseOneCommission.value;
+                caseOneItdGstVal.value = Math.abs(itdGstValue.toFixed(2));
+                caseOneItdTotalVal.value = parseInt(caseOneItdBill.value) + parseInt(caseOneItdGstVal.value);
+                caseOneCustDes.value = caseOneItdTotalVal.value;
+                caseOneCustGstGross.value = Math.abs(tcsValue.toFixed(2));
+                caseOneCustDesTDS.value = Math.abs(tdsValue.toFixed(2));
+                caseOneNetPaid.value = productPrice - (parseInt(caseOneCustDes.value) + parseInt(caseOneCustGstGross.value) + parseInt(caseOneCustDesTDS.value));
+                newMethodProductPrice.value = Math.round(caseOneDesignerVal.value);
+                newMethodGstPrice.value = Math.round(newMethodProductPrice.value * gstPrice);
+                newMethodDesingerVal.value = parseInt(newMethodProductPrice.value) + parseInt(newMethodGstPrice.value);
+                newMethodTds.value = parseInt(caseOneCustDesTDS.value) + parseInt(caseOneCustGstGross.value);
+                newMethodGstComission.value = (parseInt(caseOneCommission.value) + shippingCharges) * (parseInt(caseOneItdGstVal.value) - gstPrice)
+            }
+        </script>
+</body>
+
+</html>
